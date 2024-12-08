@@ -2,7 +2,6 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
-import pages.components.TestBase;
 
 
 public class RegistrationPageObjectTests extends TestBase {
@@ -25,7 +24,6 @@ public class RegistrationPageObjectTests extends TestBase {
                 .setCity("Delhi")
                 .submit();
 
-        registrationPage.openPage();
         registrationPage.checkResult("Student Name", "Darya Melgunova");
         registrationPage.checkResult("Student Email", "darya.melgunova@gmail.com");
         registrationPage.checkResult("Gender", "Female");
@@ -38,7 +36,7 @@ public class RegistrationPageObjectTests extends TestBase {
         registrationPage.checkResult("State and City", "NCR Delhi");
     }
     @Test
-    void incompleteDates() {
+    void incompleteDatesTest() {
         registrationPage.openPage()
                 .setFirstName("Darya")
                 .setLastName("Melgunova")
@@ -55,7 +53,7 @@ public class RegistrationPageObjectTests extends TestBase {
                 .checkResult("Date of Birth", "04 March,1996");
     }
     @Test
-    void inccorectDates() {
+    void inccorectDateTest() {
         registrationPage.openPage()
                 .setFirstName("Darya")
                 .setLastName("Melgunova")
