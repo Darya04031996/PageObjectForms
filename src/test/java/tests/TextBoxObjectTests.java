@@ -16,10 +16,10 @@ public class TextBoxObjectTests extends TestBase {
                 .setPermanentAddress("Street 2")
                 .submit();
 
-        textBoxPage.checkResult("Darya Melgunova")
-                .checkResult("darya.melgunova@mail.com")
-                .checkResult("Street 1")
-                .checkResult("Street 2");
+        textBoxPage.checkResult("Darya Melgunova");
+        textBoxPage.checkResult("darya.melgunova@mail.com");
+        textBoxPage.checkResult("Street 1");
+        textBoxPage.checkResult("Street 2");
     }
 
     }

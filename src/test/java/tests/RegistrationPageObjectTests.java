@@ -25,17 +25,17 @@ public class RegistrationPageObjectTests extends TestBase {
                 .setCity("Delhi")
                 .submit();
 
-        registrationPage.openPage()
-                .checkResult("Student Name", "Darya Melgunova")
-                .checkResult("Student Email", "darya.melgunova@gmail.com")
-                .checkResult("Gender", "Female")
-                .checkResult("Mobile", "8999543121")
-                .checkResult("Date of Birth", "04 March,1996")
-                .checkResult("Subjects", "Computer Science")
-                .checkResult("Hobbies", "Music")
-                .checkResult("Picture", "80x240.jfif")
-                .checkResult("Address", "Street1")
-                .checkResult("State and City", "NCR Delhi");
+        registrationPage.openPage();
+        registrationPage.checkResult("Student Name", "Darya Melgunova");
+        registrationPage.checkResult("Student Email", "darya.melgunova@gmail.com");
+        registrationPage.checkResult("Gender", "Female");
+        registrationPage.checkResult("Mobile", "8999543121");
+        registrationPage.checkResult("Date of Birth", "04 March,1996");
+        registrationPage.checkResult("Subjects", "Computer Science");
+        registrationPage.checkResult("Hobbies", "Music");
+        registrationPage.checkResult("Picture", "80x240.jfif");
+        registrationPage.checkResult("Address", "Street1");
+        registrationPage.checkResult("State and City", "NCR Delhi");
     }
     @Test
     void incompleteDates() {
