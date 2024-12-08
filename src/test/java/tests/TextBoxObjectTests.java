@@ -16,9 +16,9 @@ public class TextBoxObjectTests extends TestBase {
                 .submit();
 
         textBoxPage.checkResult("Darya Melgunova");
-        .checkResult("darya.melgunova@mail.com");
-        .checkResult("Street 1");
-        .checkResult("Street 2");
+        textBoxPage.checkResult("darya.melgunova@mail.com");
+        textBoxPage.checkResult("Street 1");
+        textBoxPage.checkResult("Street 2");
     }
 
     }

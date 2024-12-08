@@ -15,12 +15,9 @@ public class TextBoxPage extends TestBase {
 
     OutputComponents outputComponents = new OutputComponents();
     private String value;
-
+    
     public TextBoxPage openPage() {
         open("/text-box");
-        return null;
-    }
-    public TextBoxPage removeBanner() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
@@ -55,6 +52,5 @@ public class TextBoxPage extends TestBase {
         return this;
 
     }
-
 
 }
