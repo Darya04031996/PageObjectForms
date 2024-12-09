@@ -9,16 +9,17 @@ public class TextBoxObjectTests extends TestBase {
     @Test
     void fillformTest(){
         textBoxPage.openPage()
-                .setUserName("Darya Melgunova")
+                .removeBanner()
+                .setUserName("Darya")
                 .setUserEmail("darya.melgunova@mail.com")
                 .setCurrentAddress("Street 1")
                 .setPermanentAddress("Street 2")
                 .submit();
 
-        textBoxPage.checkResult("Darya Melgunova");
-        textBoxPage.checkResult("darya.melgunova@mail.com");
-        textBoxPage.checkResult("Street 1");
-        textBoxPage.checkResult("Street 2");
+        textBoxPage.checkResult("Name:", "Darya");
+        textBoxPage.checkResult("Email:", "darya.melgunova@mail.com");
+        textBoxPage.checkResult("Current Address :", "Street 1");
+        textBoxPage.checkResult("Permananet Address :", "Street 2");
     }
 
     }

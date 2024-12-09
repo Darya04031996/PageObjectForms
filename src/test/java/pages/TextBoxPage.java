@@ -1,30 +1,33 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import pages.components.OutputComponents;
-import tests.TestBase;
+import pages.components.TableComponent;
 
+
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 
-public class TextBoxPage extends TestBase {
-    private final SelenideElement fullNameInput = $("#userName");
-    private final SelenideElement userEmailInput = $("#userEmail");
-    private final SelenideElement currentAddressInput = $("#currentAddress");
-    private final SelenideElement permanentAddressInput = $("#permanentAddress");
 
-    OutputComponents outputComponents = new OutputComponents();
-    private String value;
-    
+public class TextBoxPage {
+    private final SelenideElement userNameInput = $("#userName");
+    SelenideElement userEmailInput = $("#userEmail");
+    SelenideElement currentAddressInput = $("#currentAddress");
+    SelenideElement permanentAddressInput = $("#permanentAddress");
+    SelenideElement submitPress = $("#submit");
+
     public TextBoxPage openPage() {
         open("/text-box");
+        return this;
+    }
+    public TextBoxPage removeBanner() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
     }
 
-    public TextBoxPage setUserName(String fullName) {
-        fullNameInput.setValue(fullName);
+    public TextBoxPage setUserName(String value) {
+        userNameInput.setValue(value);
         return this;
     }
 
@@ -43,14 +46,14 @@ public class TextBoxPage extends TestBase {
         return this;
     }
 
-    public void submit() {
-        $("#submit").click();
+    public TextBoxPage submit() {
+        submitPress.click();
+        return this;
     }
 
-    public TextBoxPage checkResult(String key) {
-        OutputComponents.checkOutputResult(key, value);
+    public TextBoxPage checkResult(String key, String value) {
+        $("#output").$(byText(key)).shouldHave(text(value));
         return this;
-
     }
 
 }
