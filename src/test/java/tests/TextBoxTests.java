@@ -1,20 +1,11 @@
 package tests;
-
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
-public class TextBoxTests {
-    @BeforeAll
-    static void beforeall() {
-        Configuration.browserSize = "920x920";
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.pageLoadStrategy = "eager";
-    }
+public class TextBoxTests extends TestBase{
 
     @Test
     void fillformTest() {
