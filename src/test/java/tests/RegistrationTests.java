@@ -6,9 +6,23 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
-import static tests.TestData.*;
 
-public class RegistrationTests extends TestBase {
+
+public  class RegistrationTests extends TestBase {
+    String firstName = "Darya";
+    String lastName = "Melgunova";
+    String userEmail ="darya.melgunova@gmail.com";
+    String genterWrapper = "Female";
+    String userNumber ="8999543121";
+    String monthOfBirth = "March";
+    String yearOfBirth = "1996";
+    String dayOfBirth = "04";
+    String subject = "Computer Science";
+    String hobby = "Music";
+    String pictureFileName = "380x240.jfif";
+    String address = "Street1, City2, Country3";
+    String state = "NCR";
+    String city = "Delhi";
 
     @Test
    void fillFormTest() {
