@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 
-public class RegistrationTests {
+public class RegistrationTests extends TestBase {
     String firstName = "Darya";
     String lastName = "Melgunova";
     String userEmail ="darya.melgunova@gmail.com";
@@ -25,12 +25,6 @@ public class RegistrationTests {
     String state = "NCR";
     String city = "Delhi";
 
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.browserSize = "920x920";
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.baseUrl = "https://demoqa.com";
-    }
 
     @Test
    void fillFormTest() {
