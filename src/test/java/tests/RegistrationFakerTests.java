@@ -1,6 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 
@@ -29,9 +28,6 @@ public class RegistrationFakerTests extends TestBase {
         String state = "NCR";
         String city = "Delhi";
 
-        open("/automation-practice-form");
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
 
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
