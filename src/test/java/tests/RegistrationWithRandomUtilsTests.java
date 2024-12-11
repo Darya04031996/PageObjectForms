@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
-import static utils.RandomUtils.getRandomString;
+import static utils.RandomUtils.*;
 
 public class RegistrationWithRandomUtilsTests extends TestBase {
 
@@ -15,16 +15,16 @@ public class RegistrationWithRandomUtilsTests extends TestBase {
 
         String firstName = getRandomString (10);
         String lastName = getRandomString (10);
-        String userEmail = getRandomString (10);
-        String genterWrapper = "Female";
-        String userNumber = getRandomString (10);
+        String userEmail = getRandomEmail();
+        String genterWrapper = getRandomGender();
+        String userNumber = getRandomPhone();
         String monthOfBirth = "March";
         String yearOfBirth = "1996";
         String dayOfBirth = "04";
         String subject = "Computer Science";
         String hobby = "Music";
         String pictureFileName = "380x240.jfif";
-        String address = getRandomString (10);
+        String address = getRandomAddress ();
         String state = "NCR";
         String city = "Delhi";
 
@@ -63,5 +63,7 @@ public class RegistrationWithRandomUtilsTests extends TestBase {
         $(".table").$(byText("Address")).sibling(0).shouldHave(text(address));
         $(".table").$(byText("State and City")).sibling(0).shouldHave(text(state + " " + city));
     }
+
+
 }
 
